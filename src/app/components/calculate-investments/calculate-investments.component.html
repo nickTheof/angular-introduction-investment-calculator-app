@@ -8,7 +8,7 @@
       <th>Invested Capital</th>
     </thead>
     <tbody class="text-end text-slate-200 text-base">
-      @for (row of dataTable(); track row) {
+      @for (row of results; track row.year) {
       <tr class="h-12">
         <td>{{ row.year }}</td>
         <td>

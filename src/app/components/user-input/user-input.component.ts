@@ -14,7 +14,7 @@ export class UserInputComponent {
   expectedReturn = signal<number>(5);
   duration = signal<number>(10);
   isCalculatingInvestment = output<boolean>();
-  investmentService = inject(CalculateInvestmentsService);
+  private investmentService = inject(CalculateInvestmentsService);
 
   onSubmit() {
     this.investmentService.createDataTable({

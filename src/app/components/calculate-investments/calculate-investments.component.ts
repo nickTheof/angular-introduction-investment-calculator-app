@@ -1,6 +1,6 @@
-import { Component, input } from '@angular/core';
-import { InvestmentYearInfo } from '../../shared/interfaces/investment-year-info';
+import { Component, inject } from '@angular/core';
 import { CurrencyPipe } from '@angular/common';
+import { CalculateInvestmentsService } from '../../services/calculate-investments.service';
 
 @Component({
   selector: 'app-calculate-investments',
@@ -9,5 +9,9 @@ import { CurrencyPipe } from '@angular/common';
   styleUrl: './calculate-investments.component.css',
 })
 export class CalculateInvestmentsComponent {
-  dataTable = input<InvestmentYearInfo[]>();
+  private investmentService = inject(CalculateInvestmentsService);
+
+  get results() {
+    return this.investmentService.getDataTable();
+  }
 }
