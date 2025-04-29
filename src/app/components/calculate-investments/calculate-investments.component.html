@@ -1,0 +1,26 @@
+<div class="w-4/5 max-w-[660px] mx-auto mt-8">
+  <table class="w-full">
+    <thead class="text-end text-emerald-200 text-sm">
+      <th>Year</th>
+      <th>Investment Value</th>
+      <th>Interest (Year)</th>
+      <th>Total Interest</th>
+      <th>Invested Capital</th>
+    </thead>
+    <tbody class="text-end text-slate-200 text-base">
+      @for (row of dataTable(); track row) {
+      <tr class="h-12">
+        <td>{{ row.year }}</td>
+        <td>
+          {{ row.investmentValue | currency : "EUR" : "symbol" : "1.2-2" }}
+        </td>
+        <td>{{ row.interest | currency : "EUR" : "symbol" : "1.2-2" }}</td>
+        <td>{{ row.totalInterest | currency : "EUR" : "symbol" : "1.2-2" }}</td>
+        <td>
+          {{ row.investedCapital | currency : "EUR" : "symbol" : "1.2-2" }}
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

@@ -1,7 +1,7 @@
 <div
   class="w-4/5 max-w-[660px] mx-auto p-6 bg-emerald-700 shadow-md mt-6 rounded-md"
 >
-  <form class="my-4">
+  <form (ngSubmit)="onSubmit()" class="my-4">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div class="flex flex-col justify-start gap-y-2 md:gap-y-1">
         <label class="text-sm text-slate-200" for="initialInvestment"
@@ -10,8 +10,11 @@
         <input
           class="w-full border border-slate-200 outline-0 rounded-md h-12 p-4 text-white font-thin focus:ring-2 focus:ring-emerald-100"
           id="initialInvestment"
+          name="initialInvestment"
           type="number"
-          placeholder="0"
+          placeholder="100"
+          min="0"
+          [(ngModel)]="initialInvestment"
         />
       </div>
       <div class="flex flex-col justify-start gap-y-2 md:gap-y-1">
@@ -21,8 +24,11 @@
         <input
           class="w-full border border-slate-200 outline-0 rounded-md h-12 p-4 text-white font-thin focus:ring-2 focus:ring-emerald-100"
           id="annualInvestment"
+          name="annualInvestment"
           type="number"
+          min="0"
           placeholder="0"
+          [(ngModel)]="annualInvestment"
         />
       </div>
       <div class="flex flex-col justify-start gap-y-2 md:gap-y-1">
@@ -32,8 +38,11 @@
         <input
           class="w-full border border-slate-200 outline-0 rounded-md h-12 p-4 text-white font-thin focus:ring-2 focus:ring-emerald-100"
           id="expectedReturn"
+          name="expectedReturn"
           type="number"
+          min="0"
           placeholder="5"
+          [(ngModel)]="expectedReturn"
         />
       </div>
       <div class="flex flex-col justify-start gap-y-2 md:gap-y-1">
@@ -41,8 +50,11 @@
         <input
           class="w-full border border-slate-200 outline-0 rounded-md h-12 p-4 text-white font-thin focus:ring-2 focus:ring-emerald-100"
           id="duration"
+          name="duration"
           type="number"
+          min="0"
           placeholder="10"
+          [(ngModel)]="duration"
         />
       </div>
     </div>
