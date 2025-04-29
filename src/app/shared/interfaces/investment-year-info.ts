@@ -1,7 +1,7 @@
 export interface InvestmentYearInfo {
-  year: string;
-  investmentValue: string;
-  interest: string;
-  totalInterest: string;
-  investedCapital: string;
+  year: number;
+  investmentValue: number;
+  interest: number;
+  totalInterest: number;
+  investedCapital: number;
 }

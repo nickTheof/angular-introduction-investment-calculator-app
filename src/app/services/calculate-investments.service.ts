@@ -24,13 +24,12 @@ export class CalculateInvestmentsService {
         userInput.initialInvestment;
 
       data.push({
-        year: `${year}`,
-        investmentValue: `${investmentValue}`,
-        interest: `${interestEarnedInYear}`,
-        totalInterest: `${totalInterest}`,
-        investedCapital: `${
-          userInput.initialInvestment + userInput.annualInvestment * year
-        }`,
+        year: year,
+        investmentValue: investmentValue,
+        interest: interestEarnedInYear,
+        totalInterest: totalInterest,
+        investedCapital:
+          userInput.initialInvestment + userInput.annualInvestment * year,
       });
     }
     this.dataTable = data;
